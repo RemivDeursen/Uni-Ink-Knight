@@ -12,6 +12,7 @@ public class Player_Sword : MonoBehaviour {
 		Debug.Log(GameObject.Find("Player").name);
 		Debug.Log(GameObject.Find("Player").name);
 		Debug.Log(GameObject.Find("Player").name);
+        Debug.Log("nothing");
 		
 		
 	}
