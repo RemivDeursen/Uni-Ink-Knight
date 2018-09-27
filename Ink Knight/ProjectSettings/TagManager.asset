@@ -18,7 +18,7 @@ TagManager:
   - Enemy
   - Interactables
   - Weapon
-  - 
+  - Background
   - 
   - 
   - 
@@ -41,11 +41,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-  - name: Background
+  - name: Skybox
     uniqueID: 2082616883
+    locked: 0
+  - name: Background
+    uniqueID: 331817237
     locked: 0
   - name: Floor
     uniqueID: 2798533879
+    locked: 0
+  - name: Foreground
+    uniqueID: 3697041237
     locked: 0
   - name: Interactables
     uniqueID: 3598453839

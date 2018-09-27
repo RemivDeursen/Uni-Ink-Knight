@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Player_InteractablesCollider : MonoBehaviour {
     public Player_Data player_Data;
+    public AudioSource pickupAudio;
 	// Use this for initialization
 	void Start () {
 		
@@ -24,6 +25,7 @@ public class Player_InteractablesCollider : MonoBehaviour {
                 Destroy(other.gameObject);
                 player_Data.keyCount += 1;
                 keyCountText.text = player_Data.keyCount.ToString();
+                pickupAudio.Play();
                 return;
             }
         }
