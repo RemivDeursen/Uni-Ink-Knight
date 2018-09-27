@@ -19,6 +19,7 @@ public class Player_Controls : MonoBehaviour
     public bool isGroundedVis = false;
     //public bool isGrounded = false;
     public Player_Data player_Data;
+    public AudioSource swingSword;
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -181,6 +182,7 @@ public class Player_Controls : MonoBehaviour
     {
         player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
         player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
+        swingSword.Play();
     }
     public void OnAttackButtonRelease()
     {
