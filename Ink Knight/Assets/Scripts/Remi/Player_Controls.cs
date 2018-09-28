@@ -207,4 +207,11 @@ public class Player_Controls : MonoBehaviour
             GetComponent<Animator>().SetBool("IsJumping", true);
         }
     }
+    private void OnCollisionEnter2D(Collision2D enemy)
+    {
+        if(enemy.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("enemy faced.");
+        }
+    }
 }

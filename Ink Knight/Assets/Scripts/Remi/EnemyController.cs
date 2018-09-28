@@ -15,7 +15,7 @@ public class EnemyController : MonoBehaviour
     private float moveSpeed = 1f;
     public Vector2 velocity;
     private Rigidbody2D rb2D;
-    public bool isGrounded = false;
+    public bool isGrounded = true;
     // Use this for initialization
     void Start()
     {

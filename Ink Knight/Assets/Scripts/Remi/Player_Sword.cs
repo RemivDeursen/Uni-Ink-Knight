@@ -6,19 +6,7 @@ public class Player_Sword : MonoBehaviour {
 
 	// Use this for initialization
 	void Start () {
-		Debug.Log(GameObject.Find("Player").name);
-		Debug.Log(GameObject.Find("Player").name);
-		Debug.Log(GameObject.Find("Player").name);
-		Debug.Log(GameObject.Find("Player").name);
-		Debug.Log(GameObject.Find("Player").name);
-		Debug.Log(GameObject.Find("Player").name);
-        Debug.Log("nothing");
-		
-		
+
 	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+  
 }
