@@ -123,9 +123,9 @@ GameObject:
   - component: {fileID: 62763803}
   - component: {fileID: 62763805}
   - component: {fileID: 62763804}
-  - component: {fileID: 62763808}
   - component: {fileID: 62763807}
   - component: {fileID: 62763806}
+  - component: {fileID: 62763808}
   m_Layer: 8
   m_Name: Tilemap
   m_TagString: Untagged
@@ -3570,7 +3570,7 @@ CompositeCollider2D:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 62763802}
-  m_Enabled: 1
+  m_Enabled: 0
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 0
@@ -4008,7 +4008,7 @@ GameObject:
   - component: {fileID: 368017291}
   - component: {fileID: 368017290}
   - component: {fileID: 368017289}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Tilemap_Underground_Floor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4256,7 +4256,7 @@ TilemapCollider2D:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_UsedByEffector: 0
-  m_UsedByComposite: 0
+  m_UsedByComposite: 1
   m_Offset: {x: 0, y: 0}
 --- !u!66 &368017290
 CompositeCollider2D:
@@ -4274,9 +4274,101 @@ CompositeCollider2D:
   m_GeometryType: 0
   m_GenerationType: 0
   m_EdgeRadius: 0
-  m_ColliderPaths: []
+  m_ColliderPaths:
+  - m_Collider: {fileID: 368017289}
+    m_ColliderPaths:
+    - - X: 120000000
+        Y: -89980472
+      - X: 130000000
+        Y: -89980472
+      - X: 130000000
+        Y: -90000000
+      - X: 160000000
+        Y: -90000000
+      - X: 160000000
+        Y: -82398328
+      - X: 150000000
+        Y: -82401680
+      - X: 150000000
+        Y: -82396184
+      - X: 140000000
+        Y: -82429944
+      - X: 140000000
+        Y: -82416664
+      - X: 130000000
+        Y: -82416656
+      - X: 130000000
+        Y: -82391824
+      - X: 120000000
+        Y: -82393544
+      - X: 120000000
+        Y: -82420264
+      - X: 110000000
+        Y: -82397912
+      - X: 110000000
+        Y: -90000000
+      - X: 120000000
+        Y: -90000000
+    - - X: 250000000
+        Y: -102398328
+      - X: 240000000
+        Y: -102401680
+      - X: 240000000
+        Y: -102396184
+      - X: 230000000
+        Y: -102429944
+      - X: 230000000
+        Y: -102416664
+      - X: 220000000
+        Y: -102416656
+      - X: 220000000
+        Y: -102416664
+      - X: 210000000
+        Y: -102416656
+      - X: 210000000
+        Y: -102416664
+      - X: 200000000
+        Y: -102416656
+      - X: 200000000
+        Y: -102420264
+      - X: 190000000
+        Y: -102397912
+      - X: 190000000
+        Y: -110000000
+      - X: 250000000
+        Y: -110000000
   m_CompositePaths:
-    m_Paths: []
+    m_Paths:
+    - - {x: 12, y: -8.998047}
+      - {x: 13, y: -8.998047}
+      - {x: 13, y: -9}
+      - {x: 16, y: -9}
+      - {x: 16, y: -8.239833}
+      - {x: 15, y: -8.240169}
+      - {x: 15, y: -8.239618}
+      - {x: 14, y: -8.242994}
+      - {x: 14, y: -8.241667}
+      - {x: 13, y: -8.241666}
+      - {x: 13, y: -8.239182}
+      - {x: 12, y: -8.239354}
+      - {x: 12, y: -8.242026}
+      - {x: 11, y: -8.239791}
+      - {x: 11, y: -9}
+      - {x: 12, y: -9}
+    - - {x: 25, y: -10.239833}
+      - {x: 24, y: -10.240169}
+      - {x: 24, y: -10.239618}
+      - {x: 23, y: -10.242994}
+      - {x: 23, y: -10.241667}
+      - {x: 22, y: -10.241666}
+      - {x: 22, y: -10.241667}
+      - {x: 21, y: -10.241666}
+      - {x: 21, y: -10.241667}
+      - {x: 20, y: -10.241666}
+      - {x: 20, y: -10.242026}
+      - {x: 19, y: -10.239791}
+      - {x: 19, y: -11}
+      - {x: 25, y: -11}
   m_VertexDistance: 0.0005
 --- !u!50 &368017291
 Rigidbody2D:
@@ -4650,6 +4742,16 @@ Prefab:
       propertyPath: pickupAudio
       value: 
       objectReference: {fileID: 1541765818}
+    - target: {fileID: 70186323506354956, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 70223374860931470, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: m_IsTrigger
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: be2920e289935944a80f131752872ee1, type: 2}
   m_IsPrefabAsset: 0
