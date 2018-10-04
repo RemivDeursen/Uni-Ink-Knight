@@ -73,8 +73,8 @@ public class newPlayerControll : MonoBehaviour
     private bool IsLeftButton;
     private bool IsRightButton;
     private bool IsJumpButton;
-    private float speed = 1f;
-    private float maxSpeed = 5;
+    private float speed = 0.5f;
+    private float maxSpeed = 2;
     private float timer = 0;
     public bool isGrounded;
 

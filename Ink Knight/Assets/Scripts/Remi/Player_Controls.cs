@@ -36,7 +36,7 @@ public class Player_Controls : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-        isGroundedVis = isGrounded();
+
         if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
         {
             touchText.text = "Moving";
@@ -72,36 +72,32 @@ public class Player_Controls : MonoBehaviour
 
     private bool IsLeftButton;
     private bool IsRightButton;
-    public bool IsJumpButton;
+    private bool IsJumpButton;
     private float speed = 0.5f;
     private float maxSpeed = 2;
     private float timer = 0;
+    public bool isGrounded;
 
-    public bool isGrounded()
+
+    private void OnCollisionEnter2D(Collision2D collision)
     {
-        //Vector2 position = transform.position;
-        Vector2 posLeft = new Vector2(transform.position.x - 0.1f, transform.position.y);
-        Vector2 posRight = new Vector2(transform.position.x + 0.1f, transform.position.y);
-        Vector2 direction = Vector2.down;
-        float distance = 0.2f;
-
-        RaycastHit2D hit = Physics2D.Raycast(posLeft, direction, distance, groundLayer);
-        RaycastHit2D hit2 = Physics2D.Raycast(posRight, direction, distance, groundLayer);
-
-        if (hit.collider != null || hit2.collider != null)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            return true;
+            velocity.y = 0;
         }
-        else return false;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("enemy faced.");
+        }
     }
     private void Movement()
     {
-        if (IsJumpButton && isGrounded() && velocity.y == 0)
+        if (IsJumpButton && isGrounded && velocity.y == 0)
         {
             if (IsLeftButton)
             {
-                
-                
+
+
                 if (velocity.x >= -maxSpeed)
                 {
                     velocity.x -= speed;
@@ -109,7 +105,7 @@ public class Player_Controls : MonoBehaviour
             }
             else if (IsRightButton)
             {
-                
+
                 if (velocity.x <= maxSpeed)
                 {
                     velocity.x += speed;
@@ -146,11 +142,11 @@ public class Player_Controls : MonoBehaviour
                 velocity.x += speed;
             }
         }
-        if (isGrounded() && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = 0;
         }
-        else if (!isGrounded() && velocity.y > -10)
+        else if (!isGrounded && velocity.y > -10)
         {
             velocity.y -= 0.5f;
         }
@@ -223,12 +219,12 @@ public class Player_Controls : MonoBehaviour
             //isGrounded = false;
             GetComponent<Animator>().SetBool("IsJumping", true);
         }
-    }
-    private void OnCollisionEnter2D(Collision2D enemy)
-    {
-        if(enemy.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            Debug.Log("enemy faced.");
+            Debug.Log(isGrounded);
+            isGrounded = false;
         }
+
     }
+
 }
