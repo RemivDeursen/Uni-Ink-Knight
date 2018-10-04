@@ -81,7 +81,7 @@ public class Player_Controls : MonoBehaviour
     {
         Vector2 position = transform.position;
         Vector2 direction = Vector2.down;
-        float distance = 1f;
+        float distance = 0.5f;
 
         RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
         if (hit.collider != null)
@@ -196,7 +196,7 @@ public class Player_Controls : MonoBehaviour
         player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
         player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
         GetComponent<AudioSource>().Play();
-        swingSword.Play();
+        //swingSword.Play();
     }
     public void OnAttackButtonRelease()
     {
