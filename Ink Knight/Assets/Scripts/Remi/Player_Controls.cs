@@ -72,19 +72,23 @@ public class Player_Controls : MonoBehaviour
 
     private bool IsLeftButton;
     private bool IsRightButton;
-    private bool IsJumpButton;
-    private float speed = 1f;
-    private float maxSpeed = 5;
+    public bool IsJumpButton;
+    private float speed = 0.5f;
+    private float maxSpeed = 2;
     private float timer = 0;
 
     public bool isGrounded()
     {
-        Vector2 position = transform.position;
+        //Vector2 position = transform.position;
+        Vector2 posLeft = new Vector2(transform.position.x - 0.1f, transform.position.y);
+        Vector2 posRight = new Vector2(transform.position.x + 0.1f, transform.position.y);
         Vector2 direction = Vector2.down;
-        float distance = 0.5f;
+        float distance = 0.2f;
 
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null)
+        RaycastHit2D hit = Physics2D.Raycast(posLeft, direction, distance, groundLayer);
+        RaycastHit2D hit2 = Physics2D.Raycast(posRight, direction, distance, groundLayer);
+
+        if (hit.collider != null || hit2.collider != null)
         {
             return true;
         }
@@ -111,7 +115,7 @@ public class Player_Controls : MonoBehaviour
                     velocity.x += speed;
                 }
             }
-            velocity.y = 15;
+            velocity.y = 7;
             IsJumpButton = false;
         }
         else if (!IsJumpButton)
@@ -148,7 +152,7 @@ public class Player_Controls : MonoBehaviour
         }
         else if (!isGrounded() && velocity.y > -10)
         {
-            velocity.y -= 1f;
+            velocity.y -= 0.5f;
         }
         rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
     }
