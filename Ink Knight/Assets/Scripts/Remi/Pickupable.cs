@@ -5,7 +5,8 @@ using UnityEngine;
 public class Pickupable : MonoBehaviour {
 	public enum ItemType{
 		Key,
-		Coin
+		Coin,
+		Item
 	}
 
 	public ItemType currentType;
