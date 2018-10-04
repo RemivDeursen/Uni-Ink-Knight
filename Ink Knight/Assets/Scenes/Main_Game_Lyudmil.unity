@@ -607,8 +607,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rbEnemy: {fileID: 1412561189}
-  x: 800
-  y: 1500
+  x: 500
+  y: 1000
+  player: {fileID: 859159634}
 --- !u!212 &52098536
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4988,6 +4989,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e44737cc387b9d440b3839ee9ef00018, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MoveDirection: 1
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -7778,8 +7780,10 @@ MonoBehaviour:
   MoveDirection: 0
   moveMax: 5
   moveAmmount: 0
-  velocity: {x: 0, y: 1}
-  isGrounded: 0
+  velocity: {x: 0, y: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
 --- !u!95 &1412561188
 Animator:
   serializedVersion: 3

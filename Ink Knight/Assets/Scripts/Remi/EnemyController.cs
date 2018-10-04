@@ -15,18 +15,19 @@ public class EnemyController : MonoBehaviour
     private float moveSpeed = 1f;
     public Vector2 velocity;
     private Rigidbody2D rb2D;
-    public bool isGrounded = true;
+    public LayerMask groundLayer;
     // Use this for initialization
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-
+       
         velocity = new Vector2(0, 0);
     }
 
     // Update is called once per frame
     void Update()
     {
+        isGrounded();
         if (MoveDirection == Directions.left)
         {
             GetComponent<SpriteRenderer>().flipX = true;
@@ -56,15 +57,45 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (isGrounded && velocity.y < 0)
+        if (isGrounded() && velocity.y < 0)
         {
             velocity.y = 0;
+            velocity.x = 0;
         }
-        else if (!isGrounded && velocity.y > -10)
+        else if (!isGrounded() && velocity.y > -10)
         {
             velocity.y -= 1f;
         }
         rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
+    }
 
+
+    public void getHit(string direction)
+    {
+        if (direction == "left")
+        {
+            velocity.x = -4;
+            velocity.y = 6;
+        }
+        if (direction == "right")
+        {
+            velocity.x = 4;
+            velocity.y = 6;
+        }
+
+
+    }
+    public bool isGrounded()
+    {
+        Vector2 position = transform.position;
+        Vector2 direction = Vector2.down;
+        float distance = 1f;
+
+        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
+        if (hit.collider != null)
+        {
+            return true;
+        }
+        else return false;
     }
 }

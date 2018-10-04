@@ -5,7 +5,13 @@ using UnityEngine.UI;
 
 public class Player_Controls : MonoBehaviour
 {
+    public enum Directions
+    {
+        left,
+        right
+    }
     [SerializeField]
+    public Directions MoveDirection = Directions.right;
     public LayerMask groundLayer;
     public Text touchText;
     public Text swipeText;
@@ -67,7 +73,7 @@ public class Player_Controls : MonoBehaviour
     private bool IsLeftButton;
     private bool IsRightButton;
     private bool IsJumpButton;
-    private float speed = 2.5f;
+    private float speed = 1f;
     private float maxSpeed = 5;
     private float timer = 0;
 
@@ -90,6 +96,8 @@ public class Player_Controls : MonoBehaviour
         {
             if (IsLeftButton)
             {
+                
+                
                 if (velocity.x >= -maxSpeed)
                 {
                     velocity.x -= speed;
@@ -97,6 +105,7 @@ public class Player_Controls : MonoBehaviour
             }
             else if (IsRightButton)
             {
+                
                 if (velocity.x <= maxSpeed)
                 {
                     velocity.x += speed;
@@ -147,6 +156,8 @@ public class Player_Controls : MonoBehaviour
     public void OnLeftButton()
     {
         IsLeftButton = true;
+        MoveDirection = Directions.left;
+        Debug.Log(MoveDirection.ToString());
         player_Data.playerSword.GetComponent<Animator>().SetBool("Forward", false);
         GetComponent<SpriteRenderer>().flipX = true;
         GetComponent<Animator>().SetTrigger("IsRunning");
@@ -159,6 +170,8 @@ public class Player_Controls : MonoBehaviour
     public void OnRightButton()
     {
         IsRightButton = true;
+        MoveDirection = Directions.right;
+        Debug.Log(MoveDirection.ToString());
         player_Data.playerSword.GetComponent<Animator>().SetBool("Forward", true);
         GetComponent<SpriteRenderer>().flipX = false;
         GetComponent<Animator>().SetTrigger("IsRunning");
