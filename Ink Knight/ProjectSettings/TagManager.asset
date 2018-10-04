@@ -19,8 +19,8 @@ TagManager:
   - Interactables
   - Weapon
   - Background
-  - 
-  - 
+  - Wall
+  - WallCollider
   - 
   - 
   - 
