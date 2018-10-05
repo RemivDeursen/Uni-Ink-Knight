@@ -2,15 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Pickupable : MonoBehaviour {
-	public enum ItemType{
-		Key,
-		Coin,
-		Item,
-		Weapon
-	}
+public class NPC_Blockade : MonoBehaviour {
 
-	public ItemType currentType;
 	// Use this for initialization
 	void Start () {
 		

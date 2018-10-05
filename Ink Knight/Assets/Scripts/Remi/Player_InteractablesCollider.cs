@@ -28,6 +28,13 @@ public class Player_InteractablesCollider : MonoBehaviour {
                 pickupAudio.Play();
                 return;
             }
+            if (other.GetComponent<Pickupable>().currentType == Pickupable.ItemType.Weapon)
+            {
+                other.GetComponent<Weapon_Interactable>().Weapon_Pickup();
+                Destroy(other.gameObject);
+                pickupAudio.Play();
+                return;
+            }
         }
     }
 }

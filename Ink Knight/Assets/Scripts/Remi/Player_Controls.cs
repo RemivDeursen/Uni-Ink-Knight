@@ -26,6 +26,7 @@ public class Player_Controls : MonoBehaviour
     //public bool isGrounded = false;
     public Player_Data player_Data;
     public AudioSource swingSword;
+    public Player_Sword sword; 
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -36,36 +37,6 @@ public class Player_Controls : MonoBehaviour
     // Update is called once per frame
     void FixedUpdate()
     {
-
-        if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Moved)
-        {
-            touchText.text = "Moving";
-            isMoving = true;
-            if (Input.GetTouch(0).phase == TouchPhase.Began)
-            {
-                BeginSwipe = Input.GetTouch(0).position;
-            }
-        }
-        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Stationary && isMoving == false)
-        {
-            Vector2 touchDeltaPosition = Input.GetTouch(0).deltaPosition;
-            touchText.text = "Touched";
-        }
-        else if (Input.touchCount > 0 && Input.GetTouch(0).phase == TouchPhase.Ended)
-        {
-            touchText.text = "Ended Moving";
-            if (isMoving)
-            {
-                EndSwipe = Input.GetTouch(0).position;
-                float distance = (BeginSwipe - EndSwipe).magnitude;
-                swipeText.text = distance.ToString();
-            }
-            else
-            {
-                swipeText.text = "No Swipe";
-            }
-            isMoving = false;
-        }
 
         Movement();
     }
@@ -195,6 +166,7 @@ public class Player_Controls : MonoBehaviour
     {
         player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
         player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
+        if(sword.isActiveAndEnabled)
         GetComponent<AudioSource>().Play();
         //swingSword.Play();
     }
