@@ -83,7 +83,7 @@ public class Player_Controls : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
-            velocity.y = 0;
+           isGrounded = true;
         }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
