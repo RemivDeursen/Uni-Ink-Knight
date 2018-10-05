@@ -1,7 +1,35 @@
 fileFormatVersion: 2
 guid: 0fa0573ac36b21f408a15e824c1ba969
 TextureImporter:
-  fileIDToRecycleName: {}
+  fileIDToRecycleName:
+    21300000: tile_jungle_bridge_0
+    21300002: tile_jungle_bridge_1
+    21300004: tile_jungle_bridge_2
+    21300006: tile_jungle_bridge_3
+    21300008: tile_jungle_bridge_4
+    21300010: tile_jungle_bridge_5
+    21300012: tile_jungle_bridge_6
+    21300014: tile_jungle_bridge_7
+    21300016: tile_jungle_bridge_8
+    21300018: tile_jungle_bridge_9
+    21300020: tile_jungle_bridge_10
+    21300022: tile_jungle_bridge_11
+    21300024: tile_jungle_bridge_12
+    21300026: tile_jungle_bridge_13
+    21300028: tile_jungle_bridge_14
+    21300030: tile_jungle_bridge_15
+    21300032: tile_jungle_bridge_16
+    21300034: tile_jungle_bridge_17
+    21300036: tile_jungle_bridge_18
+    21300038: tile_jungle_bridge_19
+    21300040: tile_jungle_bridge_20
+    21300042: tile_jungle_bridge_21
+    21300044: tile_jungle_bridge_22
+    21300046: tile_jungle_bridge_23
+    21300048: tile_jungle_bridge_24
+    21300050: tile_jungle_bridge_25
+    21300052: tile_jungle_bridge_26
+    21300054: tile_jungle_bridge_27
   externalObjects: {}
   serializedVersion: 7
   mipmaps:
@@ -40,7 +68,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -69,9 +97,471 @@ TextureImporter:
     allowsAlphaSplitting: 0
     overridden: 0
     androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: tile_jungle_bridge_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8b2336756ef0d4c8e1dea7f93ca872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_1
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 64
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 35e06dcf398605b42aef7b48bdb4c77f
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_2
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 64
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebb05ae4b47e58f4a80344a938a960c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_3
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 64
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2753824a8dc6a847ba46699015871ff
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_4
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 64
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db3faeeb09c2046418a2ac74bac674da
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_5
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 48
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82bff0bac8005c242becbac086088e20
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_6
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 48
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bcddfcc820bf5541b6e172c891faee2
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_7
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 48
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5e98d0ba8a2f2864db976492905bb9c9
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_8
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 48
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05646590a1fe20e468a0c23eeee7346e
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_9
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 48
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d4264d8419ba9ac44869331087607b2b
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_10
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 48
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 098766c5e1b48054ba2be93c5001db00
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_11
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2a4af53eeb321d84eb1f38089d7733c6
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_12
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 32
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17ba04eb47ebb354d9fee746fcf0a557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_13
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 32
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 87dd2627d9423a04692ff9f0098bed36
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_14
+      rect:
+        serializedVersion: 2
+        x: 174
+        y: 32
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ecdaa654b22f7145bd82dc578dabf8c
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_15
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 32
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f760415017c61a4ea3f295df5d0c2fa
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_16
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 32
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 96f22d17861e11740bc76c24244086a1
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 16
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 28cd8f091b0d4b34e8e333a6a5a95aee
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_18
+      rect:
+        serializedVersion: 2
+        x: 58
+        y: 16
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db55b56b8d3e2974f8be7780ea9dbfe8
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_19
+      rect:
+        serializedVersion: 2
+        x: 116
+        y: 16
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30a75fed735563048bb89d3c3ec4c243
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_20
+      rect:
+        serializedVersion: 2
+        x: 232
+        y: 16
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6029c158e9d723e4a8f637dd1e5f15c5
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tile_jungle_bridge_21
+      rect:
+        serializedVersion: 2
+        x: 290
+        y: 16
+        width: 58.666668
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 257fe383e47deef44ab976de1e400e2a
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
