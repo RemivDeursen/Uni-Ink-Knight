@@ -50,17 +50,6 @@ public class Player_Controls : MonoBehaviour
     public bool isGrounded;
 
 
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
-        {
-           isGrounded = true;
-        }
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-            Debug.Log("enemy faced.");
-        }
-    }
     private void Movement()
     {
         if (IsJumpButton && isGrounded && velocity.y == 0)
@@ -174,8 +163,13 @@ public class Player_Controls : MonoBehaviour
     {
     }
 
+
     private void OnCollisionStay2D(Collision2D other)
     {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+           isGrounded = true;
+        }
         if (other.gameObject.layer == LayerMask.NameToLayer("Level"))
         {
             Debug.Log("Enter");
@@ -183,6 +177,19 @@ public class Player_Controls : MonoBehaviour
             GetComponent<Animator>().SetBool("IsJumping", false);
         }
     }
+    
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+           isGrounded = true;
+        }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        {
+            Debug.Log("enemy faced.");
+        }
+    }
+
     private void OnCollisionExit2D(Collision2D other)
     {
         if (other.gameObject.layer == LayerMask.NameToLayer("Level"))

@@ -66,7 +66,7 @@ public class EnemyController : MonoBehaviour
         {
             velocity.y -= 1f;
         }
-        rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
+        //rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
     }
 
 
