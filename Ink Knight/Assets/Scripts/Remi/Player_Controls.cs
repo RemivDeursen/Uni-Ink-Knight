@@ -162,48 +162,13 @@ public class Player_Controls : MonoBehaviour
     public void OnAttackButtonRelease()
     {
     }
-
-
-    private void OnCollisionStay2D(Collision2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
-        {
-           isGrounded = true;
-        }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Level"))
-        {
-            Debug.Log("Enter");
-            //isGrounded = true;
-            GetComponent<Animator>().SetBool("IsJumping", false);
-        }
-    }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
-        {
-           isGrounded = true;
-        }
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Debug.Log("enemy faced.");
         }
-    }
-
-    private void OnCollisionExit2D(Collision2D other)
-    {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Level"))
-        {
-            Debug.Log("Exit");
-            //isGrounded = false;
-            GetComponent<Animator>().SetBool("IsJumping", true);
-        }
-        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
-        {
-            Debug.Log(isGrounded);
-            isGrounded = false;
-        }
-
     }
 
 }
