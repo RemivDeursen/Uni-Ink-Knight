@@ -11,7 +11,6 @@ public class Sword_Collision_Handler : MonoBehaviour {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             Debug.Log("Trigger:" + collision.gameObject.name);
-            Debug.Log(player.MoveDirection.ToString());
             collision.gameObject.GetComponent<EnemyController>().getHit(player.MoveDirection.ToString());
         }
     }
