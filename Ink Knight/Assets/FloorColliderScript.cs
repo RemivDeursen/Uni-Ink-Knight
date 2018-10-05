@@ -10,7 +10,8 @@ public class FloorColliderScript : MonoBehaviour {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Floor"))
         {
             Debug.Log(player.isGrounded);
-            player.isGrounded = true;
+            //player.isGrounded = true;
+            player.velocity.y = 0;
         }
     }
     }
