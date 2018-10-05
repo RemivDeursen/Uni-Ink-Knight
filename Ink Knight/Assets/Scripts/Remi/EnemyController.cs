@@ -83,11 +83,6 @@ public class EnemyController : MonoBehaviour
             velocity.y = 6;
         }
 
-        StartCoroutine(DieAfter2());
-    }
-
-    IEnumerator DieAfter2(){
-        yield return new WaitForSeconds(1);
         Destroy(this.gameObject);
     }
     
