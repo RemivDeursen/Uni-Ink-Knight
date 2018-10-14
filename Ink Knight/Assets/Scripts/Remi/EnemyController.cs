@@ -16,6 +16,7 @@ public class EnemyController : MonoBehaviour
     public Vector2 velocity;
     private Rigidbody2D rb2D;
     public LayerMask groundLayer;
+    public int counterHP = 0;
     // Use this for initialization
     void Start()
     {
@@ -27,7 +28,6 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        isGrounded();
         if (MoveDirection == Directions.left)
         {
             GetComponent<SpriteRenderer>().flipX = true;
@@ -57,12 +57,12 @@ public class EnemyController : MonoBehaviour
             }
         }
 
-        if (isGrounded() && velocity.y < 0)
+        if (isGrounded && velocity.y < 0)
         {
             velocity.y = 0;
             velocity.x = 0;
         }
-        else if (!isGrounded() && velocity.y > -10)
+        else if (!isGrounded && velocity.y > -10)
         {
             velocity.y -= 1f;
         }
@@ -74,29 +74,37 @@ public class EnemyController : MonoBehaviour
     {
         if (direction == "left")
         {
-            velocity.x = -4;
+            velocity.x = -3f;
             velocity.y = 6;
         }
         if (direction == "right")
         {
-            velocity.x = 4;
+            velocity.x = 3f;
             velocity.y = 6;
         }
-
-        Destroy(this.gameObject);
-    }
-    
-    public bool isGrounded()
-    {
-        Vector2 position = transform.position;
-        Vector2 direction = Vector2.down;
-        float distance = 1f;
-
-        RaycastHit2D hit = Physics2D.Raycast(position, direction, distance, groundLayer);
-        if (hit.collider != null)
+        counterHP++;
+        if (counterHP >= 5)
         {
-            return true;
+            Destroy(this.gameObject);
         }
-        else return false;
+    }
+
+    
+    public bool isGrounded;
+    private void OnCollisionStay2D(Collision2D other)
+    {
+        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+            this.isGrounded = true;
+        }
+    }
+    private void OnCollisionExit2D(Collision2D other)
+    {
+       
+        if (other.gameObject.layer == LayerMask.NameToLayer("Floor"))
+        {
+            this.isGrounded = false;
+        }
+
     }
 }

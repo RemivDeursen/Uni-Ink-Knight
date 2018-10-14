@@ -24,7 +24,7 @@ public class Menu_Manager : MonoBehaviour {
 	void Update () {
 		if(menuState == MenuState.Newgame)
 		if(!newgameAudio.isPlaying)
-		SceneManager.LoadScene("Main_Game_Remi");
+		SceneManager.LoadScene("Main_Game_Lyudmil");
 		Debug.Log("Loading Game..");
 
 		

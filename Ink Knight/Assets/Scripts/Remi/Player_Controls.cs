@@ -32,6 +32,7 @@ public class Player_Controls : MonoBehaviour
         rb2D = gameObject.GetComponent<Rigidbody2D>();
         //smallchange
         velocity = new Vector2(0, 0);
+        //player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = false;
     }
 
     // Update is called once per frame
@@ -48,7 +49,7 @@ public class Player_Controls : MonoBehaviour
     private float maxSpeed = 2;
     private float timer = 0;
     public bool isGrounded;
-
+    public Animation swordAnim;
 
     private void Movement()
     {
@@ -150,24 +151,45 @@ public class Player_Controls : MonoBehaviour
     {
         IsJumpButton = false;
     }
-
+    private bool cooldown = false;
     public void OnAttackButton()
     {
-        player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
-        player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
-        if(sword.isActiveAndEnabled)
-        GetComponent<AudioSource>().Play();
-        //swingSword.Play();
+        if (cooldown == false)
+        {
+            //player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
+            player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
+            player_Data.playerSword.GetComponent<Animator>().SetTrigger("Attack");
+            if (sword.isActiveAndEnabled)
+                GetComponent<AudioSource>().Play();
+        }
+        else
+        {
+            Debug.Log("v CD si ");
+        }
+       
     }
+    public void ColliderOff()
+    {
+        Debug.Log("colliderOFF");
+        player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = false;
+        Invoke("colliderOn", 0.5f);
+    }
+    public void colliderOn()
+    {
+       
+        player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
+    }
+  
     public void OnAttackButtonRelease()
     {
+        
     }
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            Debug.Log("enemy faced.");
+           // Debug.Log("enemy faced.");
         }
     }
 

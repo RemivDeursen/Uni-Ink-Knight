@@ -579,9 +579,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13a64bc128f4701448361ae8a62ff211, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rbEnemy: {fileID: 0}
-  x: 0
-  y: 0
   player: {fileID: 0}
 --- !u!114 &114088186912124188
 MonoBehaviour:
@@ -679,7 +676,9 @@ MonoBehaviour:
   isGroundedVis: 0
   player_Data: {fileID: 114674066792059272}
   swingSword: {fileID: 0}
+  sword: {fileID: 0}
   isGrounded: 0
+  swordAnim: {fileID: 0}
 --- !u!212 &212000856278285506
 SpriteRenderer:
   m_ObjectHideFlags: 1
