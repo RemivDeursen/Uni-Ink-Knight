@@ -10,7 +10,7 @@ public class Sword_Collision_Handler : MonoBehaviour {
         if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
             collision.gameObject.GetComponent<EnemyController>().getHit(player.MoveDirection.ToString());
-            player.GetComponent<Player_Controls>().ColliderOff();
+            player.GetComponent<Player_Controls>().colliderOff();
         }
     }
     

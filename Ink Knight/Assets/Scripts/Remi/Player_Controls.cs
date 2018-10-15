@@ -151,35 +151,22 @@ public class Player_Controls : MonoBehaviour
     {
         IsJumpButton = false;
     }
-    private bool cooldown = false;
     public void OnAttackButton()
     {
-        if (cooldown == false)
-        {
-            //player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
+       
+            player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
             player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
             player_Data.playerSword.GetComponent<Animator>().SetTrigger("Attack");
             if (sword.isActiveAndEnabled)
                 GetComponent<AudioSource>().Play();
-        }
-        else
-        {
-            Debug.Log("v CD si ");
-        }
-       
+        Invoke("colliderOff", 0.5f);
     }
-    public void ColliderOff()
+    public void colliderOff()
     {
         Debug.Log("colliderOFF");
         player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = false;
-        Invoke("colliderOn", 0.5f);
+        
     }
-    public void colliderOn()
-    {
-       
-        player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = true;
-    }
-  
     public void OnAttackButtonRelease()
     {
         
