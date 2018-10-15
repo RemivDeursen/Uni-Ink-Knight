@@ -17,6 +17,7 @@ public class EnemyController : MonoBehaviour
     private Rigidbody2D rb2D;
     public LayerMask groundLayer;
     public int counterHP = 0;
+    public Player_Controls player;
     // Use this for initialization
     void Start()
     {
@@ -88,7 +89,6 @@ public class EnemyController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
     
     public bool isGrounded;
     private void OnCollisionStay2D(Collision2D other)
@@ -105,6 +105,17 @@ public class EnemyController : MonoBehaviour
         {
             this.isGrounded = false;
         }
-
+    }
+    private void OnTriggerEnter2D(Collider2D playerCollision)
+    {
+        Debug.Log(playerCollision.name);
+        if (playerCollision.name == "LeftCollider")
+        {
+            player.getHit("left");
+        }
+        if (playerCollision.name == "RightCollider")
+        {
+            player.getHit("right");
+        }
     }
 }

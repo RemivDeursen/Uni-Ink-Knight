@@ -50,7 +50,7 @@ public class Player_Controls : MonoBehaviour
     private float timer = 0;
     public bool isGrounded;
     public Animation swordAnim;
-
+    public List<Collider2D> sideColliders;
     private void Movement()
     {
         if (IsJumpButton && isGrounded && velocity.y == 0)
@@ -113,7 +113,33 @@ public class Player_Controls : MonoBehaviour
         }
         rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
     }
-
+    public void getHit(string direction)
+    {
+        GetComponent<Animator>().SetTrigger("isHit");
+        foreach (Collider2D item in sideColliders)
+        {
+            item.enabled = false;
+        }
+        if (direction == "right")
+            {
+                velocity.x = -3f;
+                velocity.y = 4;
+            }
+            if (direction == "left")
+            {
+                velocity.x = 3f;
+                velocity.y = 4;
+            }
+        Invoke("makePlayerHittable", 1f);
+    }
+    public void makePlayerHittable()
+    {
+        GetComponent<Animator>().SetTrigger("IsIdle");
+        foreach (Collider2D item in sideColliders)
+        {
+            item.enabled = true;
+        }
+    }
     public void OnLeftButton()
     {
         IsLeftButton = true;
@@ -171,13 +197,4 @@ public class Player_Controls : MonoBehaviour
     {
         
     }
-    
-    private void OnCollisionEnter2D(Collision2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Enemy"))
-        {
-           // Debug.Log("enemy faced.");
-        }
-    }
-
 }

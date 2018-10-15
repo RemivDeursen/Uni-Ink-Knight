@@ -113,6 +113,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!70 &539036 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 70186323506354956, guid: be2920e289935944a80f131752872ee1,
+    type: 2}
+  m_PrefabInternal: {fileID: 859159630}
 --- !u!4 &1964785 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4149410971630578, guid: be2920e289935944a80f131752872ee1,
@@ -4272,6 +4277,11 @@ Tilemap:
     e31: 0
     e32: 0
     e33: 1
+--- !u!70 &367061905 stripped
+CapsuleCollider2D:
+  m_CorrespondingSourceObject: {fileID: 70223374860931470, guid: be2920e289935944a80f131752872ee1,
+    type: 2}
+  m_PrefabInternal: {fileID: 859159630}
 --- !u!1 &379955797
 GameObject:
   m_ObjectHideFlags: 0
@@ -6267,6 +6277,11 @@ Prefab:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 114830224599970540, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: sideColliders.Array.size
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 4925455784221074, guid: be2920e289935944a80f131752872ee1, type: 2}
       propertyPath: m_LocalPosition.x
       value: -28.48
@@ -6429,7 +6444,36 @@ Prefab:
     - target: {fileID: 60783580904460436, guid: be2920e289935944a80f131752872ee1,
         type: 2}
       propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 70946926235415716, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: m_Offset.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114830224599970540, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: sideColliders.Array.data[1]
+      value: 
+      objectReference: {fileID: 367061905}
+    - target: {fileID: 114830224599970540, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: sideColliders.Array.data[0]
+      value: 
+      objectReference: {fileID: 539036}
+    - target: {fileID: 212000856278285506, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: m_Enabled
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1619791389839424, guid: be2920e289935944a80f131752872ee1, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 212453550943421206, guid: be2920e289935944a80f131752872ee1,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 70526766038465136, guid: be2920e289935944a80f131752872ee1, type: 2}
@@ -6543,6 +6587,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   counterHP: 0
+  player: {fileID: 859159634}
   isGrounded: 0
 --- !u!212 &864509344
 SpriteRenderer:
@@ -20408,6 +20453,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   counterHP: 0
+  player: {fileID: 859159634}
   isGrounded: 0
 --- !u!212 &1531344262
 SpriteRenderer:
@@ -21339,6 +21385,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 256
   counterHP: 0
+  player: {fileID: 859159634}
   isGrounded: 0
 --- !u!50 &1563258982
 Rigidbody2D:
