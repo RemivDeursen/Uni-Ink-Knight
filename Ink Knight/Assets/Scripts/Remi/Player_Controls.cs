@@ -26,19 +26,30 @@ public class Player_Controls : MonoBehaviour
     //public bool isGrounded = false;
     public Player_Data player_Data;
     public AudioSource swingSword;
-    public Player_Sword sword; 
+    public Player_Sword sword;
+    public bool startBlinking = false;
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
+        
         //smallchange
         velocity = new Vector2(0, 0);
-        //player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = false;
+        player_Data.playerSword.GetComponent<PolygonCollider2D>().enabled = false;
+        
     }
 
     // Update is called once per frame
+    private void Update()
+    {
+        if(startBlinking)
+        {
+            Debug.Log("asdasd");
+            Debug.Log("asdasd");
+            flickering.GetComponent<flickeringAnimation>().SpriteBlinkingEffect();
+        }
+    }
     void FixedUpdate()
     {
-
         Movement();
     }
 
@@ -49,7 +60,7 @@ public class Player_Controls : MonoBehaviour
     private float maxSpeed = 2;
     private float timer = 0;
     public bool isGrounded;
-    public Animation swordAnim;
+    public flickeringAnimation flickering;
     public List<Collider2D> sideColliders;
     private void Movement()
     {
@@ -115,7 +126,8 @@ public class Player_Controls : MonoBehaviour
     }
     public void getHit(string direction)
     {
-        GetComponent<Animator>().SetTrigger("isHit");
+
+        startBlinking = true;
         foreach (Collider2D item in sideColliders)
         {
             item.enabled = false;
@@ -134,7 +146,8 @@ public class Player_Controls : MonoBehaviour
     }
     public void makePlayerHittable()
     {
-        GetComponent<Animator>().SetTrigger("IsIdle");
+        gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        startBlinking = false;
         foreach (Collider2D item in sideColliders)
         {
             item.enabled = true;
