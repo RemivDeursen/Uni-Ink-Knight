@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class EnemyController : MonoBehaviour
 {
     public enum Directions
@@ -16,13 +16,13 @@ public class EnemyController : MonoBehaviour
     public Vector2 velocity;
     private Rigidbody2D rb2D;
     public LayerMask groundLayer;
-    public int counterHP = 0;
+    public float counterHP = 100f;
     public Player_Controls player;
     // Use this for initialization
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
-       
+        startHealth = counterHP;
         velocity = new Vector2(0, 0);
     }
 
@@ -70,9 +70,11 @@ public class EnemyController : MonoBehaviour
         rb2D.MovePosition(rb2D.position + velocity * Time.deltaTime);
     }
 
-
+    public Image HealthBar;
+    private float startHealth;
     public void getHit(string direction)
     {
+        Debug.Log("hit");
         if (direction == "left")
         {
             velocity.x = -3f;
@@ -83,8 +85,9 @@ public class EnemyController : MonoBehaviour
             velocity.x = 3f;
             velocity.y = 6;
         }
-        counterHP++;
-        if (counterHP >= 5)
+        counterHP= counterHP - 20f;
+        HealthBar.fillAmount = counterHP / startHealth;
+        if (counterHP <= 0)
         {
             Destroy(this.gameObject);
         }
@@ -108,7 +111,7 @@ public class EnemyController : MonoBehaviour
     }
     private void OnTriggerEnter2D(Collider2D playerCollision)
     {
-        Debug.Log(playerCollision.name);
+
         if (playerCollision.name == "LeftCollider")
         {
             player.getHit("left");

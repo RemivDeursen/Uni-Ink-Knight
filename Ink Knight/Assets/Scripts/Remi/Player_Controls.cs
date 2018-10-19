@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Player_Controls : MonoBehaviour
 {
@@ -43,8 +44,7 @@ public class Player_Controls : MonoBehaviour
     {
         if(startBlinking)
         {
-            Debug.Log("asdasd");
-            Debug.Log("asdasd");
+           
             flickering.GetComponent<flickeringAnimation>().SpriteBlinkingEffect();
         }
     }
@@ -61,7 +61,10 @@ public class Player_Controls : MonoBehaviour
     private float timer = 0;
     public bool isGrounded;
     public flickeringAnimation flickering;
+    private float health = 100;
+    public Image healthBar;
     public List<Collider2D> sideColliders;
+    bool afterJump = false;
     private void Movement()
     {
         if (IsJumpButton && isGrounded && velocity.y == 0)
@@ -117,6 +120,16 @@ public class Player_Controls : MonoBehaviour
         if (isGrounded && velocity.y < 0)
         {
             velocity.y = 0;
+            GetComponent<Animator>().SetBool("IsJumping", false);
+            if((IsRightButton || IsLeftButton ) && afterJump)
+            {
+                GetComponent<Animator>().SetTrigger("IsRunning");
+            }
+            if((!IsRightButton && !IsLeftButton) && afterJump)
+            {
+                GetComponent<Animator>().SetTrigger("IsIdle");
+            }
+            afterJump = false;
         }
         else if (!isGrounded && velocity.y > -10)
         {
@@ -126,6 +139,12 @@ public class Player_Controls : MonoBehaviour
     }
     public void getHit(string direction)
     {
+        health = health - 30;
+        healthBar.fillAmount = health / 100f;
+        if (health <= 0)
+        {
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
 
         startBlinking = true;
         foreach (Collider2D item in sideColliders)
@@ -147,6 +166,7 @@ public class Player_Controls : MonoBehaviour
     public void makePlayerHittable()
     {
         gameObject.GetComponent<SpriteRenderer>().enabled = true;
+        gameObject.GetComponent<SpriteRenderer>().color = Color.white;
         startBlinking = false;
         foreach (Collider2D item in sideColliders)
         {
@@ -161,6 +181,7 @@ public class Player_Controls : MonoBehaviour
         player_Data.playerSword.GetComponent<Animator>().SetBool("Forward", false);
         GetComponent<SpriteRenderer>().flipX = true;
         GetComponent<Animator>().SetTrigger("IsRunning");
+       
     }
     public void OnLeftButtonRelease()
     {
@@ -169,6 +190,7 @@ public class Player_Controls : MonoBehaviour
     }
     public void OnRightButton()
     {
+        
         IsRightButton = true;
         MoveDirection = Directions.right;
         Debug.Log(MoveDirection.ToString());
@@ -184,11 +206,13 @@ public class Player_Controls : MonoBehaviour
 
     public void OnJumpButton()
     {
+        GetComponent<Animator>().SetBool("IsJumping", true);
         IsJumpButton = true;
+        afterJump = true;
     }
     public void OnJumpButtonRelease()
     {
-        IsJumpButton = false;
+       
     }
     public void OnAttackButton()
     {

@@ -10,7 +10,7 @@ public class flickeringAnimation : MonoBehaviour {
     public GameObject player;
     public void SpriteBlinkingEffect()
     {
-        Debug.Log("start");
+        player.GetComponent<SpriteRenderer>().color = Color.red;
         spriteBlinkingTotalTimer += Time.deltaTime;
         if (spriteBlinkingTotalTimer >= spriteBlinkingTotalDuration)
         {
