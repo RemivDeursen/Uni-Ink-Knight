@@ -1,11 +1,10 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Weapon_Interactable : MonoBehaviour {
 	public Player_Sword sword;
 	public NPC_Blockade Npc;
-
 	// Use this for initialization
 	void Start () {
 		
@@ -19,5 +18,5 @@ public class Weapon_Interactable : MonoBehaviour {
 	public void Weapon_Pickup(){
 		sword.gameObject.SetActive(true);
 		Npc.GetComponent<BoxCollider2D>().enabled = false;
-	}
+    }
 }
