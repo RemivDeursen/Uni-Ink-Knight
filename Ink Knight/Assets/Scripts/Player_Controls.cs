@@ -33,7 +33,7 @@ public class Player_Controls : MonoBehaviour
     private bool IsJumpButton;
     private float speed = 0.5f;
     private float maxSpeed = 2;
-    private float timer = 0;
+    //private float timer = 0;
     public bool isGrounded;
     public flickeringAnimation flickering;
     private float health = 100;
