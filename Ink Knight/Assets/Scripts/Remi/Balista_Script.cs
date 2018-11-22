@@ -15,12 +15,12 @@ public class Balista_Script : MonoBehaviour {
 	void Update () {
 		
 	}
-
+	public float turnrate = 10;
 	public void MoveBalistaUP(){
-		BalistaBow.transform.RotateAround(BalistaBow.transform.position, axis, 20);
+		BalistaBow.transform.RotateAround(BalistaBow.transform.position, axis, turnrate);
 	}
 	public void MoveBalistaDOWN(){
-		BalistaBow.transform.RotateAround(BalistaBow.transform.position, axis, -20);
+		BalistaBow.transform.RotateAround(BalistaBow.transform.position, axis, -turnrate);
 	}
 	public void FireBalista(){
 		Instantiate(ArrowPrefab, BalistaBow.transform.position, BalistaBow.transform.rotation);

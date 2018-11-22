@@ -18,4 +18,11 @@ public class Balista_Arrow : MonoBehaviour {
 		yield return new WaitForSeconds(5);
 		Destroy(this.gameObject);
 	}
+
+	private void OnCollisionEnter2D(Collision2D other) {
+		if (other.gameObject.tag == "Boss1Hitbox")
+		{
+		Destroy(this.gameObject);
+		}
+	}
 }

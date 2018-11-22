@@ -92,6 +92,19 @@ public class EnemyController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public int getHitBoss()
+    {
+        Debug.Log("hit");
+        counterHP= counterHP - 50f;
+        HealthBar.fillAmount = counterHP / startHealth;
+        if (counterHP <= 0)
+        {
+            Destroy(this.gameObject);
+            return 1;
+        }
+        return 0;
+    }
     
     public bool isGrounded;
     private void OnCollisionStay2D(Collision2D other)
