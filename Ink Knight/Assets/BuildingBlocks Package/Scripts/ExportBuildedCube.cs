@@ -18,7 +18,7 @@ public class ExportBuildedCube : MonoBehaviour {
     public string builderActivatorName;
     public GameObject blockPhase;
     public GameObject sidePhase;
-    [MenuItem("Examples/Create Prefab")] // legacy, used to make a prefab of the builded thing.
+    //[MenuItem("Examples/Create Prefab")] // legacy, used to make a prefab of the builded thing.
 
 
 
