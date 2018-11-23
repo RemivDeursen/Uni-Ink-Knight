@@ -7,7 +7,8 @@ public class EnemyController : MonoBehaviour
     public enum Directions
     {
         left,
-        right
+        right,
+        none
     }
     public Directions MoveDirection = Directions.left;
     public float moveMax = 5;
@@ -43,7 +44,7 @@ public class EnemyController : MonoBehaviour
                 MoveDirection = Directions.right;
             }
         }
-        else
+        else if (MoveDirection == Directions.right)
         {
             GetComponent<SpriteRenderer>().flipX = false;
             if (moveAmmount < moveMax)
@@ -56,6 +57,10 @@ public class EnemyController : MonoBehaviour
                 moveAmmount = 0;
                 MoveDirection = Directions.left;
             }
+        }
+        else
+        {
+            return;
         }
 
         if (isGrounded && velocity.y < 0)
@@ -92,10 +97,35 @@ public class EnemyController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-    //public int getHitSpecial()
-    //{
-        
-    //}
+
+    float i=0;
+    public void getHitSpecial(string direction)
+    {
+            if (direction == "left")
+            {
+                velocity.x = -3f;
+                velocity.y = 6;
+            }
+            if (direction == "right")
+            {
+                velocity.x = 3f;
+                velocity.y = 6;
+            }
+
+            
+            if (counterHP <= 0)
+            {
+                Destroy(this.gameObject);
+            }
+        i ++;
+        if(i >= 5)
+        {
+            i = 0;
+            counterHP = counterHP - 15;
+            HealthBar.fillAmount = counterHP / startHealth;
+        }
+            
+    }
     public int getHitBoss()
     {
         Debug.Log("hit");
