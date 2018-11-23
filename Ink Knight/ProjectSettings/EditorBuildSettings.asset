@@ -9,12 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main_Menu_Remi.unity
     guid: 93fb02e01fa9bc1449b16d0c7bb1e88d
   - enabled: 1
-    path: Assets/Scenes/Main_Menu.unity
-    guid: 2cda990e2423bbf4892e6590ba056729
-  - enabled: 1
     path: Assets/Scenes/Main_Game_Lyudmil.unity
     guid: 3aa6ce7205b6f9e42a6652149c7a148b
-  - enabled: 0
-    path: Assets/BuildingBlocks Package/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
+  - enabled: 1
+    path: Assets/Scenes/End_demo.unity
+    guid: 5b29fd717c9d83c4eb5375092d8d7338
   m_configObjects: {}
