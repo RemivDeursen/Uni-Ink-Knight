@@ -40,6 +40,8 @@ public class Player_Controls : MonoBehaviour
     public Image healthBar;
     public List<Collider2D> sideColliders;
     bool afterJump = false;
+    public AudioSource attackSound;
+    public AudioSource stepSound;
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -201,6 +203,7 @@ public class Player_Controls : MonoBehaviour
     }
     public void OnLeftButton()
     {
+        stepSound.Play();
         IsLeftButton = true;
         MoveDirection = Directions.left;
         Debug.Log(MoveDirection.ToString());
@@ -211,12 +214,13 @@ public class Player_Controls : MonoBehaviour
     }
     public void OnLeftButtonRelease()
     {
+        stepSound.Stop();
         IsLeftButton = false;
         GetComponent<Animator>().SetTrigger("IsIdle");
     }
     public void OnRightButton()
     {
-        
+        stepSound.Play();
         IsRightButton = true;
         MoveDirection = Directions.right;
         Debug.Log(MoveDirection.ToString());
@@ -226,6 +230,7 @@ public class Player_Controls : MonoBehaviour
     }
     public void OnRightButtonRelease()
     {
+        stepSound.Stop();
         IsRightButton = false;
         GetComponent<Animator>().SetTrigger("IsIdle");
     }
@@ -240,6 +245,7 @@ public class Player_Controls : MonoBehaviour
     {
        
     }
+
     public void OnAttackButton()
     {
        
@@ -247,7 +253,7 @@ public class Player_Controls : MonoBehaviour
             player_Data.playerSword.GetComponent<SpriteRenderer>().enabled = true;
             player_Data.playerSword.GetComponent<Animator>().SetTrigger("Attack");
             if (sword.isActiveAndEnabled)
-                GetComponent<AudioSource>().Play();
+                attackSound.Play();
         Invoke("colliderOff", 0.5f);
     }
     public void colliderOff()
