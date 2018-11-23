@@ -24,6 +24,7 @@ public class ShootingEnemy : MonoBehaviour {
       GameObject shootedArrow = Instantiate(arrow, SpawningPoint.transform.position, SpawningPoint.transform.rotation);
         shootedArrow.transform.parent = gameObject.transform;
         waitingToShoot = true;
+        GetComponent<AudioSource>().Play();
         StartCoroutine(prepareToShoot());
     }
     IEnumerator prepareToShoot()

@@ -74,6 +74,7 @@ public class EnemyController : MonoBehaviour
     private float startHealth;
     public void getHit(string direction)
     {
+        GetComponent<AudioSource>().Play();
         Debug.Log("hit");
         if (direction == "left")
         {
@@ -98,6 +99,7 @@ public class EnemyController : MonoBehaviour
     //}
     public int getHitBoss()
     {
+        GetComponent<AudioSource>().Play();
         Debug.Log("hit");
         counterHP= counterHP - 50f;
         HealthBar.fillAmount = counterHP / startHealth;
