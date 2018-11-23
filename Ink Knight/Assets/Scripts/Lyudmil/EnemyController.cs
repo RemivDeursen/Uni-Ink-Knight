@@ -92,7 +92,10 @@ public class EnemyController : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
-
+    //public int getHitSpecial()
+    //{
+        
+    //}
     public int getHitBoss()
     {
         Debug.Log("hit");

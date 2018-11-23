@@ -124,8 +124,9 @@ public class Cube : MonoBehaviour {
            // Debug.Log("Did not Hit");
         }
         if (hit[1].collider != null && hit2[1].collider != null && hit3[1].collider != null && hit4[1].collider != null
-            && hit[1].collider.name != "Tiles_Floor_Coll" && hit2[1].collider.name != "Tiles_Floor_Coll"
-            && hit3[1].collider.name != "Tiles_Floor_Coll" && hit4[1].collider.name != "Tiles_Floor_Coll")
+            && (hit[1].collider.name == "CubeToAdd(Clone)" || hit[1].collider.name == "BasicCube") && (hit2[1].collider.name == "CubeToAdd(Clone)" || hit2[1].collider.name == "BasicCube")
+            && (hit3[1].collider.name == "CubeToAdd(Clone)"|| hit3[1].collider.name == "BasicCube") && (hit4[1].collider.name == "CubeToAdd(Clone)" || hit4[1].collider.name == "BasicCube")
+       )
         {
             Debug.Log("all are used");
             AllUsed = true;

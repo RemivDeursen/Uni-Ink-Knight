@@ -42,9 +42,9 @@ public class BlockSelectorMovement : MonoBehaviour {
                 Vector3 mousePosC = Camera.main.ScreenToWorldPoint(mousePositionClose);
                 Debug.DrawRay(mousePosC, mousePosF - mousePosC, Color.red);
                 RaycastHit2D hit = Physics2D.Raycast(mousePosC, mousePosF - mousePosC);
-                if(hit.collider != null && hit.collider.name != "Tiles_Floor_Coll")
+                if(hit.collider != null && hit.collider.name == "CubeToAdd(Clone)" || hit.collider.name == "BasicCube")
                 {
-                    //Debug.Log(hit.collider.name);
+                    Debug.Log(hit.collider.name);
                     if (hit.transform.gameObject.GetComponent<Cube>().AllUsed == true)
                     {
                         Debug.Log("all sides are currently used.") ;
