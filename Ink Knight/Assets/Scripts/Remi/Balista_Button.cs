@@ -11,15 +11,7 @@ public class Balista_Button : MonoBehaviour {
 	}
 	public Button_Type button_Type;
 	public Balista_Script balista;
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
+    public AudioSource balistaSound;
 
 	private void OnTriggerEnter2D(Collider2D other) {
 			Debug.Log("Hit Something");
@@ -35,6 +27,7 @@ public class Balista_Button : MonoBehaviour {
 			}
 			if(button_Type == Button_Type.fire){
 				balista.FireBalista();
+                balistaSound.Play();
 			}
 		}
 	}

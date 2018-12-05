@@ -42,6 +42,7 @@ public class Player_Controls : MonoBehaviour
     bool afterJump = false;
     public AudioSource attackSound;
     public AudioSource stepSound;
+    public AudioSource getHitMetal;
     void Start()
     {
         rb2D = gameObject.GetComponent<Rigidbody2D>();
@@ -151,6 +152,7 @@ public class Player_Controls : MonoBehaviour
     }
     public void getHitByArrow()
     {
+        getHitMetal.Play();
         health = health - 10;
         healthBar.fillAmount = health / 100f;
         if (health <= 0)
@@ -167,6 +169,7 @@ public class Player_Controls : MonoBehaviour
     }
     public void getHit(string direction)
     {
+        
         health = health - 30;
         healthBar.fillAmount = health / 100f;
         if (health <= 0)
